@@ -4,6 +4,6 @@ namespace WeatherSystem
 {
     public interface IInputStrategy
     {
-        WeatherDTO GetWeather(string input);
+        public WeatherDTO GetWeather(string input);
     }
 }
