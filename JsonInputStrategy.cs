@@ -5,6 +5,6 @@ namespace WeatherSystem
 {
     public class JsonInputStrategy : IInputStrategy
     {
-        public WeatherDTO GetWeather(string input) => JsonSerializer.Deserialize<WeatherDTO>(input);
+        public WeatherDTO? GetWeatherDTO(string input) => JsonSerializer.Deserialize<WeatherDTO>(input);
     }
 }

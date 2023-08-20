@@ -2,7 +2,7 @@
 {
     public class WeatherDTO
     {
-        public string Location { get; set; }
+        public string? Location { get; set; }
         public float Temperature { get; set; }
         public float Humidity { get; set; }
         
@@ -11,6 +11,15 @@
             Location = location;
             Temperature = temperature;
             Humidity = humidity;
+        }
+
+        public WeatherDTO() { }
+
+        public override string ToString()
+        {
+            return $"Location: {Location}\n" +
+                   $"Temperature: {Temperature}\n" +
+                   $"Humidity: {Humidity}";
         }
     }
 }
