@@ -7,9 +7,9 @@ namespace WeatherSystem.Repositories
     {
         private static ConfigRepository? _instance = null;
         private const string _configFilePath = "Configs\\BotsConfig.json";
-        private Dictionary<string, WeatherBotDTO> _botsConfig;
+        private List<WeatherBotDTO> _botsConfig;
 
-        public Dictionary<string, WeatherBotDTO> BotsConfig
+        public List<WeatherBotDTO> BotsConfig
         {
             get => _botsConfig;
         }
@@ -24,12 +24,26 @@ namespace WeatherSystem.Repositories
             _botsConfig = GetBotsConfig();
         }
 
-        private Dictionary<string, WeatherBotDTO> GetBotsConfig()
+        private List<WeatherBotDTO> GetBotsConfig()
         {
             var relativePath = Path.Combine(Directory.GetCurrentDirectory(), _configFilePath);
             var rawData = File.ReadAllText(relativePath);
+            var bots = JsonSerializer.Deserialize<Dictionary<string, WeatherBotDTO>>(rawData);
 
-            return JsonSerializer.Deserialize<Dictionary<string, WeatherBotDTO>>(rawData);
+            return MakeBotsList(bots);
+        }
+
+        private List<WeatherBotDTO> MakeBotsList(Dictionary<string, WeatherBotDTO> bots)
+        {
+            var botsList = new List<WeatherBotDTO>();
+
+            foreach (var bot in bots)
+            {
+                bot.Value.Name = bot.Key;
+                botsList.Add(bot.Value);
+            }
+
+            return botsList;
         }
     }
 }

@@ -5,8 +5,7 @@ using System.Text.Json;
 try
 {
     var x = ConfigRepository.Instance.BotsConfig;
-    var rain = x["SunBot"];
-    Console.WriteLine(rain.TemperatureThreshold ?? 0);
+    Console.WriteLine(x[0].Name);
 }
 catch (Exception ex)
 {

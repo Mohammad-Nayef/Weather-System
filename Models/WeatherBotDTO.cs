@@ -2,6 +2,7 @@
 {
     public class WeatherBotDTO
     {
+        public string? Name { get; set; }
         public bool? Enabled { get; set; }
         public string? Message { get; set; }
         public int? HumidityThreshold { get; set; }
