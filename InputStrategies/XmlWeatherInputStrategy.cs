@@ -3,7 +3,7 @@ using WeatherSystem.Models;
 
 namespace WeatherSystem.Strategies
 {
-    public class XmlInputWeatherStrategy : IInputStrategy
+    public class XmlWeatherInputStrategy : IWeatherInputStrategy
     {
         public WeatherStateDTO? GetWeatherDTO(string input)
         {

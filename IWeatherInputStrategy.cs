@@ -2,7 +2,7 @@
 
 namespace WeatherSystem
 {
-    public interface IInputStrategy
+    public interface IWeatherInputStrategy
     {
         public WeatherStateDTO? GetWeatherDTO(string input);
     }

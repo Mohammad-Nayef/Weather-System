@@ -2,16 +2,18 @@
 
 namespace WeatherSystem
 {
-    public  class StrategyContext
+    public  class WeatherStrategyContext
     {
-        private IInputStrategy _strategy;
+        private IWeatherInputStrategy _strategy;
 
-        public StrategyContext(IInputStrategy strategy)
+        public WeatherStrategyContext() { }
+
+        public WeatherStrategyContext(IWeatherInputStrategy strategy)
         {
             _strategy = strategy;
         }
 
-        public void SetStrategy(IInputStrategy strategy)
+        public void SetStrategy(IWeatherInputStrategy strategy)
         {
             _strategy = strategy;
         }
