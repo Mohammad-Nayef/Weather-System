@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WeatherSystem
+﻿namespace WeatherSystem
 {
-    internal class BotData
+    public class BotData
     {
+        public bool? Enabled { get; set; } = new();
+        public int? HumidityThreshold { get; set; } = null;
+        public int? TemperatureThreshold { get; set; } = null;
+        public string? Message { get; set; } = null;
     }
 }

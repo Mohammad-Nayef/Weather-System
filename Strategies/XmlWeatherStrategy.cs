@@ -1,9 +1,9 @@
 ﻿using System.Xml.Serialization;
 using WeatherSystem.Models;
 
-namespace WeatherSystem
+namespace WeatherSystem.Strategies
 {
-    public class XmlInputStrategy : IInputStrategy
+    public class XmlWeatherStrategy : IInputStrategy
     {
         public WeatherDTO? GetWeatherDTO(string input)
         {

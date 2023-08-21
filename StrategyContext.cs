@@ -2,11 +2,11 @@
 
 namespace WeatherSystem
 {
-    public  class Context
+    public  class StrategyContext
     {
         private IInputStrategy _strategy;
 
-        public Context(IInputStrategy strategy)
+        public StrategyContext(IInputStrategy strategy)
         {
             _strategy = strategy;
         }
