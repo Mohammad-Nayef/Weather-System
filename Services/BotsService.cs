@@ -9,12 +9,12 @@ namespace WeatherSystem.Services
 
         public static List<WeatherBotDTO> EnabledWeatherBots
         {
-            get => MakeBotsList(_weatherBots)
+            get => GetBotsList(_weatherBots)
                     .Where(bot => bot.Enabled == true)
                     .ToList();
         }
 
-        private static List<WeatherBotDTO> MakeBotsList(Dictionary<string, WeatherBotDTO> bots)
+        private static List<WeatherBotDTO> GetBotsList(Dictionary<string, WeatherBotDTO> bots)
         {
             var botsList = new List<WeatherBotDTO>();
 
@@ -25,6 +25,13 @@ namespace WeatherSystem.Services
             }
 
             return botsList;
+        }
+
+        public static List<WeatherBotDTO> GetTriggeredWeatherBots()
+        {
+            return EnabledWeatherBots.
+                    Where(bot => bot.IsThresholdTriggered == true)
+                    .ToList();
         }
     }
 }
