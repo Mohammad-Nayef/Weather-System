@@ -3,16 +3,16 @@ using WeatherSystem.Models;
 
 namespace WeatherSystem.Strategies
 {
-    public class XmlWeatherStrategy : IInputStrategy
+    public class XmlInputWeatherStrategy : IInputStrategy
     {
-        public WeatherDTO? GetWeatherDTO(string input)
+        public WeatherStateDTO? GetWeatherDTO(string input)
         {
-            var weather = new WeatherDTO();
+            var weather = new WeatherStateDTO();
             var serializer = new XmlSerializer(weather.GetType());
 
             using (var reader = new StringReader(input))
             {
-                weather = (WeatherDTO?)serializer.Deserialize(reader);
+                weather = (WeatherStateDTO?)serializer.Deserialize(reader);
             }
 
             return weather;

@@ -16,6 +16,6 @@ namespace WeatherSystem
             _strategy = strategy;
         }
 
-        public WeatherDTO WeatherDeserialize(string input) => _strategy.GetWeatherDTO(input);        
+        public WeatherStateDTO WeatherDeserialize(string input) => _strategy.GetWeatherDTO(input);        
     }
 }
