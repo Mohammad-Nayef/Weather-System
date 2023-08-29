@@ -1,5 +1,5 @@
-﻿using WeatherSystem.Models;
-using System.Text.Json;
+﻿using System.Text.Json;
+using WeatherSystem.Models;
 
 namespace WeatherSystem.Strategies
 {

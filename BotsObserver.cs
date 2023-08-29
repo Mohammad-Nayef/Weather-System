@@ -5,7 +5,8 @@ namespace WeatherSystem
 {
     public static class BotsObserver
     {
-        public static List<WeatherBotDTO> Subscribers {
+        public static List<WeatherBotDTO> Subscribers
+        {
             get => BotsService.EnabledWeatherBots;
         }
 

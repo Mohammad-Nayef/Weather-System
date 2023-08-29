@@ -2,7 +2,7 @@
 
 namespace WeatherSystem
 {
-    public  class WeatherStrategyContext
+    public class WeatherStrategyContext
     {
         private IWeatherInputStrategy _strategy;
 
@@ -18,6 +18,6 @@ namespace WeatherSystem
             _strategy = strategy;
         }
 
-        public WeatherStateDTO WeatherDeserialize(string input) => _strategy.GetWeatherDTO(input);        
+        public WeatherStateDTO WeatherDeserialize(string input) => _strategy.GetWeatherDTO(input);
     }
 }

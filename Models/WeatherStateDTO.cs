@@ -5,7 +5,7 @@
         public string? Location { get; set; }
         public float Temperature { get; set; }
         public float Humidity { get; set; }
-        
+
         public WeatherStateDTO(string location, float temperature, float humidity)
         {
             Location = location;

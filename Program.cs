@@ -44,10 +44,11 @@ while (true)
     Console.WriteLine($"\n{weatherState}\n");
 
     BotsService.GetTriggeredWeatherBots()
-        .ForEach(bot => {
-                Console.WriteLine($"{bot.Name} activated!");
-                Console.WriteLine($"{bot.Name}: \"{bot.Message}\"\n");
-            }
+        .ForEach(bot =>
+        {
+            Console.WriteLine($"{bot.Name} activated!");
+            Console.WriteLine($"{bot.Name}: \"{bot.Message}\"\n");
+        }
         );
 
 repeat:

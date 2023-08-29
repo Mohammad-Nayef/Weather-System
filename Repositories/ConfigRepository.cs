@@ -15,11 +15,11 @@ namespace WeatherSystem.Repositories
         }
 
         public static ConfigRepository? Instance
-        { 
+        {
             get => _instance ?? new();
         }
 
-        private ConfigRepository() 
+        private ConfigRepository()
         {
             _botsConfig = GetBotsConfig();
         }
@@ -28,7 +28,7 @@ namespace WeatherSystem.Repositories
         {
             var relativePath = Path.Combine(Directory.GetCurrentDirectory(), _configFilePath);
             var rawData = File.ReadAllText(relativePath);
-            
+
             return JsonSerializer.Deserialize<Dictionary<string, WeatherBotDTO>>(rawData);
         }
     }
