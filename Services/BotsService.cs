@@ -5,7 +5,7 @@ namespace WeatherSystem.Services
 {
     public static class BotsService
     {
-        private static Dictionary<string, WeatherBotDTO> _weatherBots = ConfigRepository.Instance.BotsConfig;
+        private static Dictionary<string, WeatherBotDTO> _weatherBots = BotsConfigRepository.Instance.BotsConfig;
 
         public static List<WeatherBotDTO> EnabledWeatherBots
         {

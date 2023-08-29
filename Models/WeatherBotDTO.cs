@@ -10,7 +10,7 @@
         public int? TemperatureUnderThreshold { get; set; }
         public bool? IsThresholdTriggered { get; private set; } = false;
 
-        public void Update(WeatherStateDTO weatherState)
+        public void CheckThresholds(WeatherStateDTO weatherState)
         {
             IsThresholdTriggered = HumidityThresholdTriggered(weatherState) ||
                 TemperatureAboveThresholdTriggered(weatherState) ||

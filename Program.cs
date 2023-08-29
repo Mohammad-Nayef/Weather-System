@@ -21,13 +21,13 @@ while (true)
     var inputStrategy = new WeatherStrategyContext();
 
     if (option == 1)
-        inputStrategy.SetStrategy(new JsonWeatherInputStrategy());
+        inputStrategy.SetStrategy(new JsonWeatherInputProcessor());
     else
-        inputStrategy.SetStrategy(new XmlWeatherInputStrategy());
+        inputStrategy.SetStrategy(new XmlWeatherInputProcessor());
 
     Console.WriteLine("Enter the weather state object:");
     var weatherStateInput = Console.ReadLine();
-    WeatherStateDTO weatherState = new();
+    var weatherState = new WeatherStateDTO();
 
     try
     {

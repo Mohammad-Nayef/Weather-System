@@ -3,9 +3,9 @@ using WeatherSystem.Models;
 
 namespace WeatherSystem.Repositories
 {
-    public class ConfigRepository
+    public class BotsConfigRepository
     {
-        private static ConfigRepository? _instance = null;
+        private static BotsConfigRepository? _instance = null;
         private const string _configFilePath = "Configs\\BotsConfig.json";
         private Dictionary<string, WeatherBotDTO> _botsConfig;
 
@@ -14,12 +14,12 @@ namespace WeatherSystem.Repositories
             get => _botsConfig;
         }
 
-        public static ConfigRepository? Instance
+        public static BotsConfigRepository Instance
         {
             get => _instance ?? new();
         }
 
-        private ConfigRepository()
+        private BotsConfigRepository()
         {
             _botsConfig = GetBotsConfig();
         }

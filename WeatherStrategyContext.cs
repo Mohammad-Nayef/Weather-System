@@ -4,20 +4,20 @@ namespace WeatherSystem
 {
     public class WeatherStrategyContext
     {
-        private IWeatherInputStrategy _strategy;
+        private IWeatherInputStrategy _weatherInputStrategy;
 
         public WeatherStrategyContext() { }
 
         public WeatherStrategyContext(IWeatherInputStrategy strategy)
         {
-            _strategy = strategy;
+            _weatherInputStrategy = strategy;
         }
 
         public void SetStrategy(IWeatherInputStrategy strategy)
         {
-            _strategy = strategy;
+            _weatherInputStrategy = strategy;
         }
 
-        public WeatherStateDTO WeatherDeserialize(string input) => _strategy.GetWeatherDTO(input);
+        public WeatherStateDTO WeatherDeserialize(string input) => _weatherInputStrategy.GetWeatherDTO(input);
     }
 }

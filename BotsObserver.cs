@@ -15,7 +15,7 @@ namespace WeatherSystem
         /// </summary>
         public static void NotifySubscribers(WeatherStateDTO weatherState)
         {
-            Subscribers.ForEach(subscriber => subscriber.Update(weatherState));
+            Subscribers.ForEach(subscriber => subscriber.CheckThresholds(weatherState));
         }
     }
 }
