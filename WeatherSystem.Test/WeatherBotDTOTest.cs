@@ -25,7 +25,6 @@ namespace WeatherSystem.Test
             weatherState.Humidity = (float)sut.HumidityThreshold - 1;
             sut.CheckThresholds(weatherState);
 
-
             // Assert
             sut.IsThresholdTriggered.Should().BeFalse();
         }
