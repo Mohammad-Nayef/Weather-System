@@ -30,6 +30,18 @@ namespace WeatherSystem.Test
             sut.IsThresholdTriggered.Should().BeFalse();
         }
 
+        [Fact]
+        public void HumidityThresholdShouldBeTriggered()
+        {
+            // Act
+            weatherState.Temperature = (float)sut.TemperatureAboveThreshold - 1;
+            weatherState.Humidity = (float)sut.HumidityThreshold + 1;
+            sut.CheckThresholds(weatherState);
 
+            // Assert
+            sut.IsThresholdTriggered.Should().BeTrue();
+        }
+
+      
     }
 }
