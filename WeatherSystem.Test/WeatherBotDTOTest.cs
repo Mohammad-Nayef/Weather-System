@@ -8,61 +8,61 @@ namespace WeatherSystem.Test
     {
         Fixture fixture = new();
         WeatherStateDTO weatherState;
-        WeatherBotDTO sut;
+        WeatherBotDTO weatherBot;
 
         public WeatherBotDTOTest()
         {
-            sut = fixture.Create<WeatherBotDTO>();
+            weatherBot = fixture.Create<WeatherBotDTO>();
             weatherState = fixture.Create<WeatherStateDTO>();
-            sut.TemperatureUnderThreshold = sut.TemperatureAboveThreshold - 2;
+            weatherBot.TemperatureUnderThreshold = weatherBot.TemperatureAboveThreshold - 2;
         }
 
         [Fact]
         public void ThresholdsShouldNotBeTriggered()
         {
             // Act
-            weatherState.Temperature = (float)sut.TemperatureAboveThreshold - 1;
-            weatherState.Humidity = (float)sut.HumidityThreshold - 1;
-            sut.CheckThresholds(weatherState);
+            weatherState.Temperature = (float)weatherBot.TemperatureAboveThreshold - 1;
+            weatherState.Humidity = (float)weatherBot.HumidityThreshold - 1;
+            weatherBot.CheckThresholds(weatherState);
 
             // Assert
-            sut.IsThresholdTriggered.Should().BeFalse();
+            weatherBot.IsThresholdTriggered.Should().BeFalse();
         }
 
         [Fact]
         public void HumidityThresholdShouldBeTriggered()
         {
             // Act
-            weatherState.Temperature = (float)sut.TemperatureAboveThreshold - 1;
-            weatherState.Humidity = (float)sut.HumidityThreshold + 1;
-            sut.CheckThresholds(weatherState);
+            weatherState.Temperature = (float)weatherBot.TemperatureAboveThreshold - 1;
+            weatherState.Humidity = (float)weatherBot.HumidityThreshold + 1;
+            weatherBot.CheckThresholds(weatherState);
 
             // Assert
-            sut.IsThresholdTriggered.Should().BeTrue();
+            weatherBot.IsThresholdTriggered.Should().BeTrue();
         }
 
         [Fact]
         public void TemperatureAboveThresholdShouldBeTriggered()
         {
             // Act
-            weatherState.Temperature = (float)sut.TemperatureAboveThreshold + 1;
-            weatherState.Humidity = (float)sut.HumidityThreshold - 1;
-            sut.CheckThresholds(weatherState);
+            weatherState.Temperature = (float)weatherBot.TemperatureAboveThreshold + 1;
+            weatherState.Humidity = (float)weatherBot.HumidityThreshold - 1;
+            weatherBot.CheckThresholds(weatherState);
 
             // Assert
-            sut.IsThresholdTriggered.Should().BeTrue();
+            weatherBot.IsThresholdTriggered.Should().BeTrue();
         }
 
         [Fact]
         public void TemperatureUnderThresholdShouldBeTriggered()
         {
             // Act
-            weatherState.Temperature = (float)sut.TemperatureUnderThreshold - 1;
-            weatherState.Humidity = (float)sut.HumidityThreshold - 1;
-            sut.CheckThresholds(weatherState);
+            weatherState.Temperature = (float)weatherBot.TemperatureUnderThreshold - 1;
+            weatherState.Humidity = (float)weatherBot.HumidityThreshold - 1;
+            weatherBot.CheckThresholds(weatherState);
 
             // Assert
-            sut.IsThresholdTriggered.Should().BeTrue();
+            weatherBot.IsThresholdTriggered.Should().BeTrue();
         }
     }
 }
