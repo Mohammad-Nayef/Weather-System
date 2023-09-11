@@ -18,7 +18,7 @@ namespace WeatherSystem.Test
         }
 
         [Fact]
-        public void ThresholdsShouldNotBeTriggered()
+        public void CheckThresholds_ThresholdsShouldNotBeTriggered_WhenConfiguredLimitsAreNotReached()
         {
             // Act
             weatherState.Temperature = (float)weatherBot.TemperatureAboveThreshold - 1;
@@ -30,7 +30,7 @@ namespace WeatherSystem.Test
         }
 
         [Fact]
-        public void HumidityThresholdShouldBeTriggered()
+        public void CheckThreshold_HumidityThresholdShouldBeTriggered_WhenHumidityIsMoreThanConfigured()
         {
             // Act
             weatherState.Temperature = (float)weatherBot.TemperatureAboveThreshold - 1;
@@ -42,7 +42,7 @@ namespace WeatherSystem.Test
         }
 
         [Fact]
-        public void TemperatureAboveThresholdShouldBeTriggered()
+        public void CheckThreshold_TemperatureAboveThresholdShouldBeTriggered_WhenTemperatureIsMoreThanConfigured()
         {
             // Act
             weatherState.Temperature = (float)weatherBot.TemperatureAboveThreshold + 1;
@@ -54,7 +54,7 @@ namespace WeatherSystem.Test
         }
 
         [Fact]
-        public void TemperatureUnderThresholdShouldBeTriggered()
+        public void CheckThreshold_TemperatureUnderThresholdShouldBeTriggered_WhenTemperatureIsLessThanConfigured()
         {
             // Act
             weatherState.Temperature = (float)weatherBot.TemperatureUnderThreshold - 1;
