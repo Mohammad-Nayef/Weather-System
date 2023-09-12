@@ -59,6 +59,8 @@ namespace WeatherSystem.Test
             // Arrange
             weatherState.Temperature = (float)weatherBot.TemperatureUnderThreshold - 1;
             weatherState.Humidity = (float)weatherBot.HumidityThreshold - 1;
+
+            // Act
             weatherBot.CheckThresholds(weatherState);
 
             // Assert
