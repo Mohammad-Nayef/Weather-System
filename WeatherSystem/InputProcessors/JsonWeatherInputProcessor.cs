@@ -3,7 +3,7 @@ using WeatherSystem.Models;
 
 namespace WeatherSystem.Strategies
 {
-    public class JsonWeatherInputProcessor : IWeatherInputStrategy
+    public class JsonWeatherInputProcessor : IWeatherInput
     {
         public WeatherStateDTO? GetWeatherDTO(string input) => JsonSerializer.Deserialize<WeatherStateDTO?>(input);
     }
