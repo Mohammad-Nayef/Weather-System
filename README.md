@@ -77,6 +77,6 @@ Singleton: to get the configurations from the file.
 Strategy: to choose the input method (JSON or XML).
 Observer: to notify the bots about the current weather state and act accordingly.
 
-Extensibility:
-Bots can be added and removed simply via the configurations file.
+**Extensibility:**</br>
+Bots can be added and removed simply via the configurations file.</br>
 Input formats can be added by implementing IWeatherInputStrategy.
