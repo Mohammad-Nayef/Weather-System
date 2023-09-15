@@ -52,21 +52,21 @@ All the bot's settings should be controlled via a configuration file, including 
 
 ```json
 {
-  "RainBot": {
-    "Enabled": true,
-    "humidityThreshold": 70,
-    "Message": "It looks like it's about to pour down!"
-  },
-  "SunBot": {
-    "Enabled": true,
-    "temperatureThreshold": 30,
-    "Message": "Wow, it's a scorcher out there!"
-  },
-  "SnowBot": {
-    "Enabled": false,
-    "temperatureThreshold": 0,
-    "Message": "Brrr, it's getting chilly!"
-  }
+    "RainBot": {
+        "Enabled": true,
+        "HumidityThreshold": 70,
+        "Message": "It looks like it's about to pour down!"
+    },
+    "SunBot": {
+        "Enabled": true,
+        "TemperatureAboveThreshold": 30,
+        "Message": "Wow, it's a scorcher out there!"
+    },
+    "SnowBot": {
+        "Enabled": false,
+        "TemperatureUnderThreshold": 0,
+        "Message": "Brrr, it's getting chilly!"
+    }
 }
 ```
 
