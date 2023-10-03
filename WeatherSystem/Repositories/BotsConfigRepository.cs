@@ -14,10 +14,7 @@ namespace WeatherSystem.Repositories
             get => _botsConfig;
         }
 
-        public static BotsConfigRepository Instance
-        {
-            get => _instance ?? new();
-        }
+        public static BotsConfigRepository Instance => _instance ?? new();
 
         private BotsConfigRepository()
         {
